@@ -13,13 +13,16 @@ FBox parteObra7;
 FBox parteObra8;
 FBox parteObra9;
 
+PImage lienzo;
+
 int tamObra=140;
 
 //int btnReset;
 
 void setup() {
   size(600, 600);
-
+  
+  lienzo= loadImage("lienzo.jpg");
   Fisica.init(this);
 
   mundo = new FWorld();
@@ -83,7 +86,8 @@ void setup() {
 }
 
 void draw() {
-  background(#F2EF84);
+  background(#FDFFFC);
+  image(lienzo,0,0);
   //para que hagan todos los calculos matematicos entre los cuerpos que interactuan?????????
   mundo.step();
   //dibuja el mundo de fisica
